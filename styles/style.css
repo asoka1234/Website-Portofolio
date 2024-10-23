@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+
+
+:root {
+--primaryTextColor: #232e35;
+--secondaryTextColor: #656d72;
+
+--borderColor: #f1f1f1;
+--lineColor: #d9d9d9;
+
+--primaryBackgroundColor: #fff;
+--secondaryBackgroundColor: #fbfbfb;
+--thirdBackgorundColor: #f5f3fe;
+
+--primaryIconColor: #7e74f1;
+--primaryIconColorHover: #5d51e8;
+
+--sectionPadding: 6rem 0;
+
+--itemBorderRadius: o.7rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, strong {
+    color: var(--primaryTextColor) ;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.9rem;
+}
+
+p, span, label, input, textarea, li{
+    color: var(--secondaryTextColor);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+section {
+  scroll-margin-top: 143px; /* Sesuaikan dengan tinggi header */
+}
+
+
+
+.main-container {
+    width: 1200px;
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container{
+        width: 90%;
+    }
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 1.5px solid white;
+    cursor: pointer; 
+    transiton: .2s ease-in-out;
+}
+
+.btn:hover{
+    box-shadow: rgba(0,0, 0, 0.04) 0px 3px 5px;
+}
+
+/* Titles */
+.section-title{
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+}
+
+.pre-title{
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: var(--secondaryTextColor)
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.pre-title::before{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+/* Layout */
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* Logo and Navigation Menu */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Jarak antara logo dan menu */
+    align-items: center; /* Pusatkan item secara vertikal */
+    padding: 2rem 0; /* Padding untuk bagian atas dan bawah */
+    background-color: #ffffff; /* Latar belakang putih */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Pusatkan logo secara vertikal */
+    font-weight: 700; /* Ketebalan font */
+    font-size: 2rem; /* Ukuran font untuk logo */
+}
+
+.logo a {
+    color: #007bff; /* Warna untuk logo */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.logo a:hover {
+    color: #0056b3; /* Warna saat hover pada logo */
+}
+
+nav ul {
+    list-style: none; /* Menghilangkan bullet point */
+    display: flex; /* Flexbox untuk item menu */
+    gap: 3rem; /* Jarak antar item menu */
+}
+
+nav ul li {
+    display: flex; /* Flex untuk item menu */
+    align-items: center; /* Pusatkan item secara vertikal */
+    position: relative; /* Posisi relatif untuk efek hover */
+}
+
+nav ul li a {
+    color: #333; /* Warna teks untuk item menu */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 1.1rem; /* Ukuran font untuk item menu */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Warna saat hover pada item menu */
+}
+
+/* Efek garis bawah saat hover */
+nav ul li::after {
+    content: ""; /* Menambahkan konten kosong */
+    position: absolute; /* Posisi absolut untuk garis bawah */
+    left: 0; /* Jarak kiri */
+    bottom: -5px; /* Jarak dari bawah item menu */
+    height: 3px; /* Tinggi garis */
+    width: 100%; /* Lebar garis */
+    background-color: #007bff; /* Warna garis */
+    transform: scaleX(0); /* Skala awal garis ke 0 */
+    transition: transform 0.3s ease; /* Transisi untuk skala */
+}
+
+nav ul li:hover::after {
+    transform: scaleX(1); /* Skala garis ke penuh saat hover */
+}
+
+
+/* Home Section */
+#hero {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    max-width: 1200px; /* Batas lebar maksimum */
+    margin: 50px auto; /* Pusatkan elemen dan tambahkan margin atas */
+    padding: 20px; /* Padding untuk elemen hero */
+    background: #fff; /* Latar belakang putih untuk hero */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin-bottom: 90px;
+}
+
+/* Hero Left */
+.hero-left {
+    flex: 1; /* Membuat hero-left mengambil ruang yang tersedia */
+    padding: 10px; /* Padding untuk konten dalam hero */
+}
+
+/* Hero Right */
+.hero-right {
+    flex: 1; /* Membuat hero-right mengambil ruang yang tersedia */
+    text-align: center; /* Memusatkan gambar */
+}
+
+/* Gambar */
+.hero-right img {
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar kontainer */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    border-radius: 10px; /* Sudut membulat gambar */
+}
+
+/* Style untuk elemen teks */
+.hero-name {
+    font-size: 3.5rem; /* Ukuran font untuk nama */
+    color: var(--primaryTextColor); /* Warna teks */
+    margin: 10px 0; /* Margin atas dan bawah */
+}
+
+.hero-name span {
+    color: #007bff; /* Warna aksen untuk nama */
+}
+
+p {
+    font-size: 1.1rem; /* Ukuran font untuk paragraf */
+    line-height: 1.8; /* Jarak antar baris */
+    color: var(--secondaryTextColor); /* Warna teks */
+    margin: 1.5rem 0; /* Margin atas dan bawah */
+}
+
+.btn-primary {
+    display: inline-block; /* Buat tombol menjadi blok */
+    padding: 0.75rem 1.5rem; /* Padding untuk tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border-radius: 30px; /* Sudut membulat tombol */
+    text-decoration: none; /* Tanpa garis bawah */
+    transition: background-color 0.3s; /* Transisi warna saat hover */
+    margin-top: 1rem; /* Jarak atas untuk tombol */
+}
+
+.btn-primary:hover {
+    background-color: #f9f9f9; /* Warna saat hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column; /* Kolom pada perangkat kecil */
+        text-align: center; /* Pusatkan teks */
+        margin-top: 20px; /* Margin atas untuk perangkat kecil */
+    }
+
+    .hero-left, .hero-right {
+        flex: none; /* Hapus flex pada perangkat kecil */
+        margin-bottom: 20px; /* Jarak bawah */
+    }
+    
+    .hero-right img {
+        max-width: 80%; /* Mengurangi ukuran gambar pada perangkat kecil */
+    }
+}
+
+/* Style untuk tombol sosial media */
+.social-buttons {
+    display: flex;
+    
+    margin-top: 20px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-buttons a svg {
+    width: 45px;
+    height: 45px;
+    fill: #555; /* Warna default ikon */
+    transition: fill 0.3s ease;
+}
+
+.social-buttons a:hover {
+    transform: scale(1.1); /* Efek zoom saat hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Menambahkan shadow saat hover */
+}
+
+.social-buttons a:hover svg {
+    fill: #0077b5; /* Ganti warna ikon LinkedIn saat hover */
+}
+
+.social-buttons a:nth-child(2):hover svg {
+    fill: #E1306C; /* Warna ikon Instagram saat hover */
+}
+
+.social-buttons a:nth-child(3):hover svg {
+    fill: #FF0000; /* Warna ikon YouTube saat hover */
+}
+
+
+
+/* About Section */
+#about {
+    padding: 40px 20px; /* Padding untuk about section */
+    background-color: #fff; /* Latar belakang putih untuk about section */
+    margin-bottom: 218px;
+}
+
+
+/* About Section */
+.about-content {
+    display: flex; /* Menggunakan flexbox untuk tata letak satu kolom */
+    flex-direction: column;
+    align-items: center; /* Memusatkan konten */
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; /* Opsional, jika ingin menambahkan jarak atas */
+}
+
+.about-title {
+    font-size: 2rem;
+    margin-top: 10px; /* Kurangi jarak atas agar judul naik ke atas */
+    text-align: center;
+}
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.image-description {
+    font-size: 14px;
+    color: var(--secondaryTextColor); /* Abu-abu gelap */
+    margin-top: 10px; /* Jarak atas */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row; /* Dua kolom pada layar besar */
+        align-items: flex-start; /* Memastikan kolom teks rata atas */
+        gap: 20px; /* Jarak antara gambar dan teks */
+    }
+    
+    .about-text {
+        padding-left: 20px; /* Memberikan jarak antara gambar dan teks */
+    }
+}
+
+
+/* Portofolio Section */
+#portofolios {
+    background-color: #f9f9f9; /* Latar belakang abu-abu terang */
+    padding: 0px 20px; /* Padding atas dan bawah */
+     margin-bottom: 60px;
+    
+}
+
+.portfolios {
+    max-width: 1200px; /* Batas lebar maksimum */
+    margin: 0 auto; /* Pusatkan elemen */
+    text-align: center; /* Pusatkan teks */
+}
+
+.pre-title {
+    font-size: 1.5rem; /* Ukuran font untuk pre-title */
+    color: var(--secondaryTextColor); /* Warna teks */
+    font-weight: 500; /* Ketebalan font */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Ukuran font untuk judul section */
+    color: var(--primaryTextColor); /* Warna teks */
+    margin-bottom: 40px; /* Jarak bawah */
+}
+
+/* Grid Layout */
+.grid-3 {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 20px; /* Jarak antar portofolio */
+}
+
+/* Portofolio Item */
+.portofolio {
+    background: #fff; /* Latar belakang putih untuk portofolio */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    overflow: hidden; /* Memastikan konten tidak melampaui batas */
+    transition: transform 0.3s; /* Transisi untuk efek hover */
+}
+
+.portofolio:hover {
+    transform: translateY(-5px); /* Efek hover */
+}
+
+/* Portofolio Cover */
+.portofolio-cover img {
+    width: 100%; /* Memastikan gambar memenuhi lebar kontainer */
+    height: auto; /* Mempertahankan rasio aspek */
+}
+
+/* Portofolio Info */
+.portofolio-info {
+    padding: 20px; /* Padding untuk konten dalam portofolio */
+}
+
+.portofolio-title h4 {
+    font-size: 1.5rem; /* Ukuran font untuk judul portofolio */
+    color: var(--primaryTextColor); /* Warna teks */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+.portofolio-tags {
+    margin-bottom: 15px; /* Jarak bawah untuk tags */
+}
+
+.portofolio-tags div {
+    display: inline-block; /* Menampilkan tag secara inline */
+    background: #007bff; /* Warna latar belakang untuk tag */
+    color: white; /* Warna teks untuk tag */
+    padding: 5px 10px; /* Padding untuk tag */
+    border-radius: 5px; /* Sudut membulat untuk tag */
+    font-size: 0.9rem; /* Ukuran font untuk tag */
+}
+
+/* Portofolio Description */
+.portofolio-info p {
+    font-size: 1rem; /* Ukuran font untuk deskripsi */
+    line-height: 1.6; /* Jarak antar baris */
+    color: var(--secondaryTextColor); /* Warna teks */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: 1fr; /* 1 kolom pada perangkat kecil */
+    }
+}
+
+
+/* Skill & Education Section */
+#skills {
+    background-color: #f9f9f9;
+    padding: 30px 0;
+     margin-bottom: 150px;
+}
+
+.main-container {
+    width: 80%;
+    margin: 0 auto; /* Pusatkan konten */
+    text-align: center; /* Pusatkan teks */
+}
+
+.pre-title {
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Memungkinkan konten untuk membungkus */
+}
+
+/* Skill Section */
+.skills-left {
+    width: 45%;
+    text-align: left; /* Teks rata kiri */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.skill {
+    background-color: #fff; /* Latar belakang putih untuk setiap skill */
+    border-radius: 5px; /* Sudut membulat */
+    padding: 15px; /* Padding untuk skill */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/* Education Section */
+.education {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease; /* Durasi dan tipe transisi */
+}
+
+.education:hover {
+    transform: translateY(-10px); /* Bergerak ke atas 10px saat di-hover */
+}
+
+.education .line {
+    display: inline-block; /* Agar garis dapat disusun secara horizontal */
+}
+
+.education .line div {
+    width: 4px;
+    height: 50px;
+    background-color: #007bff; /* Warna garis */
+    margin-right: 15px;
+}
+
+.education-info {
+    display: inline-block;
+    vertical-align: top; /* Rata atas untuk informasi pendidikan */
+}
+
+.education-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.education-years {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-grid {
+        flex-direction: column; /* Susun kolom pada layar kecil */
+        align-items: center; /* Pusatkan item */
+    }
+
+    .skills-left, .skills-right {
+        width: 100%; /* Full width pada perangkat kecil */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .education-info {
+        display: block; /* Tampilkan sebagai blok */
+        text-align: center; /* Pusatkan informasi pendidikan */
+        margin-bottom: 20px; /* Jarak bawah */
+    }
+
+    .skill {
+        width: 100%; /* Full width untuk skill di layar kecil */
+        margin-bottom: 15px; /* Jarak bawah antar skill */
+    }
+}
+
+
+
+/* Contact Section */
+#contact {
+    padding: 0px 0;
+    background-color: #f9f9f9; /* Warna latar belakang untuk section contact */
+     margin-bottom: 30px;
+}
+
+.contact-container {
+    width: 85%; /* Lebar kontainer */
+    margin: 0 auto; /* Pusatkan kontainer */
+    display: flex; /* Flexbox untuk tata letak */
+    justify-content: space-between; /* Jarak antara elemen */
+    background-color: #fff; /* Latar belakang putih untuk kontainer */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.contact-info-section {
+    width: 45%; /* Lebar untuk bagian info kontak */
+    background-color: #007bff; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    padding: 50px; /* Padding untuk konten */
+    border-top-left-radius: 8px; /* Sudut membulat bagian kiri atas */
+    border-bottom-left-radius: 8px; /* Sudut membulat bagian kiri bawah */
+}
+
+.contact-info-section h2 {
+    font-size: 32px; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.contact-info-section p {
+    font-size: 16px; /* Ukuran font untuk paragraf */
+    margin-bottom: 40px; /* Jarak bawah */
+    line-height: 1.8; /* Jarak antar baris */
+}
+
+.contact-info {
+    margin-top: 30px; /* Jarak atas untuk bagian info kontak */
+}
+
+.contact-info-item {
+    display: flex; /* Flex untuk item info kontak */
+    align-items: center; /* Rata tengah secara vertikal */
+    margin-bottom: 30px; /* Jarak bawah antar item */
+}
+
+.contact-info-item .contact-icon {
+    margin-right: 15px; /* Jarak kanan untuk ikon */
+    font-size: 24px; /* Ukuran font untuk ikon */
+    color: #ff5722; /* Warna ikon */
+}
+
+.contact-info-item h4 {
+    font-size: 18px; /* Ukuran font untuk sub-judul */
+    color: #fff; /* Warna teks */
+    margin-bottom: 5px; /* Jarak bawah */
+}
+
+.contact-info-item p {
+    color: #ddd; /* Warna teks untuk deskripsi */
+}
+
+.contact-form-section {
+    width: 55%; /* Lebar untuk bagian formulir kontak */
+    padding: 50px; /* Padding untuk konten */
+    background-color: #fff; /* Latar belakang putih untuk formulir */
+    border-top-right-radius: 8px; /* Sudut membulat bagian kanan atas */
+    border-bottom-right-radius: 8px; /* Sudut membulat bagian kanan bawah */
+}
+
+.contact-form-section h2 {
+    font-size: 32px; /* Ukuran font untuk judul formulir */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.contact-form {
+    display: flex; /* Flex untuk formulir */
+    flex-direction: column; /* Susun kolom */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Jarak bawah untuk grup formulir */
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* Lebar penuh */
+    padding: 15px; /* Padding dalam input */
+    border: 1px solid #ddd; /* Garis batas */
+    border-radius: 4px; /* Sudut membulat */
+    font-size: 16px; /* Ukuran font untuk input */
+    transition: border-color 0.3s ease; /* Transisi untuk warna batas */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #007bff; /* Warna batas saat fokus */
+}
+
+textarea {
+    resize: none; /* Nonaktifkan perubahan ukuran textarea */
+}
+
+.btn-submit {
+    background-color: #007bff; /* Warna tombol */
+    color: #fff; /* Warna teks tombol */
+    padding: 15px 30px; /* Padding untuk tombol */
+    border: none; /* Tanpa garis batas */
+    border-radius: 4px; /* Sudut membulat */
+    cursor: pointer; /* Kursor saat hover */
+    transition: background-color 0.3s ease; /* Transisi untuk warna tombol */
+}
+
+.btn-submit:hover {
+    background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Susun kolom pada layar kecil */
+    }
+
+    .contact-info-section, .contact-form-section {
+        width: 100%; /* Lebar penuh pada perangkat kecil */
+        border-radius: 8px; /* Sudut membulat */
+    }
+
+    .contact-info-section {
+        border-bottom-left-radius: 0; /* Menghapus sudut membulat */
+        border-top-right-radius: 8px; /* Menjaga sudut membulat di bagian kanan atas */
+    }
+}
+
+.footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #888;
+}
+
